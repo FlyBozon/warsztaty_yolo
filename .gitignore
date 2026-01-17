@@ -2,6 +2,19 @@
 __pycache__/
 *.py[codz]
 *$py.class
+*.claude/
+
+*.aux
+*.bbl
+*.blg
+*.log
+*.snm
+*.toc
+*.fdb_latexmk
+*.vrb
+*.nav
+*.out
+*.pdf
 
 # C extensions
 *.so

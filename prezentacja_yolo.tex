@@ -13,6 +13,17 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\urlstyle{same}
+
 % Ścieżka do obrazków
 \graphicspath{{./img/}{./}}
 
@@ -197,6 +208,32 @@ Autonomiczne pojazdy, monitoring, retail, medycyna
 \end{frame}
 
 % -----------------------------------------------------------------------------
+% Slajd: Przykłady segmentacji
+% -----------------------------------------------------------------------------
+\begin{frame}{Przykłady segmentacji semantycznej}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{segmentation/000300_overlay.png}
+\vspace{0.2cm}
+\includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{segmentation/000500_overlay.png}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{segmentation/000600_overlay.png}
+\vspace{0.2cm}
+\includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{segmentation/M-33-7-A-d-3-2_visualization.png}
+\end{center}
+\end{column}
+\end{columns}
+\vspace{0.3cm}
+\begin{center}
+\small\textit{Każdy kolor reprezentuje inną klasę obiektów}
+\end{center}
+\end{frame}
+
+% -----------------------------------------------------------------------------
 % Slajd: Porównanie zadań wizyjnych
 % -----------------------------------------------------------------------------
 \begin{frame}{Porównanie zadań -- przykład}
@@ -232,31 +269,7 @@ Segm. instancji & piksele\_kot1, piksele\_kot2, piksele\_pies (każda instancja 
 \end{center}
 \end{frame}
 
-% -----------------------------------------------------------------------------
-% Slajd: Przykłady segmentacji
-% -----------------------------------------------------------------------------
-\begin{frame}{Przykłady segmentacji semantycznej}
-\begin{columns}
-\begin{column}{0.5\textwidth}
-\begin{center}
-\includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{segmentation/000300_overlay.png}
-\vspace{0.2cm}
-\includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{segmentation/000500_overlay.png}
-\end{center}
-\end{column}
-\begin{column}{0.5\textwidth}
-\begin{center}
-\includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{segmentation/000600_overlay.png}
-\vspace{0.2cm}
-\includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{segmentation/M-33-7-A-d-3-2_visualization.png}
-\end{center}
-\end{column}
-\end{columns}
-\vspace{0.3cm}
-\begin{center}
-\small\textit{Każdy kolor reprezentuje inną klasę obiektów}
-\end{center}
-\end{frame}
+
 
 % -----------------------------------------------------------------------------
 % Slajd: Historia - podejście dwuetapowe
@@ -377,6 +390,12 @@ $\rightarrow$ Szybkie, real-time!
 \end{columns}
 \end{frame}
 
+\begin{frame}{Architektura YOLO -- jak działa}
+\begin{center}
+\includegraphics[width=0.9\textwidth,height=0.45\textheight,keepaspectratio]{yolo_work2.png}
+\end{center}
+\end{frame}
+
 % -----------------------------------------------------------------------------
 % Slajd: Ewolucja YOLO v1-v3
 % -----------------------------------------------------------------------------
@@ -387,7 +406,7 @@ $\rightarrow$ Szybkie, real-time!
 \midrule
 \textbf{YOLOv1} & 2016 & Pierwsza wersja, siatka $7\times7$, 45 FPS, problemy z małymi obiektami \\
 \midrule
-\textbf{YOLOv2} (YOLO9000) & 2016 & Batch normalization, anchor boxes, detekcja na wielu skalach, 9000 klas \\
+\textbf{YOLOv2} (YOLO9000) & 2016 & Batch normalization, anchor boxes, detekcja na wielu skalach, \href{https://www.geeksforgeeks.org/machine-learning/yolo9000-architecture-faster-stronger/}{9000 klas} \\
 \midrule
 \textbf{YOLOv3} & 2018 & Multi-scale predictions (3 skale), Darknet-53 backbone, lepsze małe obiekty \\
 \bottomrule
@@ -630,7 +649,7 @@ Badania naukowe & YOLOv9 (najnowsze techniki) \\
 % Opis: Prosty schemat sieci neuronowej (input-hidden-output)
 % Ścieżka: img/neural_network_diagram.png
 \begin{center}
-\fbox{\parbox{4cm}{\centering\small\textit{Schemat sieci neuronowej}\\[0.2cm]\tiny img/neural\_network\_diagram.png}}
+\includegraphics[width=0.9\textwidth,height=0.45\textheight,keepaspectratio]{img/neural_network_diagram.png}
 \end{center}
 \vspace{0.2cm}
 \textbf{Interaktywna wizualizacja:}\\\url{https://playground.tensorflow.org/}
@@ -666,7 +685,7 @@ Badania naukowe & YOLOv9 (najnowsze techniki) \\
 % Opis: Wizualizacja operacji konwolucji z filtrem przesuwającym się po obrazie
 % Ścieżka: img/convolution_visualization.png
 \begin{center}
-\fbox{\parbox{4.5cm}{\centering\small\textit{Wizualizacja konwolucji}\\[0.2cm]\tiny img/convolution\_visualization.png}}
+\includegraphics[width=0.9\textwidth,height=0.45\textheight,keepaspectratio]{img/convolution_visualization.png}
 \end{center}
 \end{column}
 \begin{column}{0.5\textwidth}
@@ -683,11 +702,25 @@ Badania naukowe & YOLOv9 (najnowsze techniki) \\
 \begin{itemize}
     \item Liczba warstw (depth)
     \item Liczba filtrów (width)
-    \item Rozmiar filtra (kernel size)
+    \item Rozmiar filtra (kernel size - nieparzyste)
 \end{itemize}
 \end{column}
 \end{columns}
 \end{frame}
+
+\begin{frame}{Kluczowe operacje}
+    \begin{center}
+\includegraphics[width=0.9\textwidth,height=0.7\textheight,keepaspectratio]{img/schemat_ogolny.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Pooling}
+    \begin{center}
+\includegraphics[width=0.9\textwidth,height=0.7\textheight,keepaspectratio]{img/pooling.png}
+\end{center}
+\end{frame}
+
+
 
 % -----------------------------------------------------------------------------
 % Slajd: Architektura YOLO - przegląd
@@ -705,6 +738,8 @@ Badania naukowe & YOLOv9 (najnowsze techniki) \\
     \item \textbf{Head} -- warstwa detekcyjna (predykcja bbox + klasy)
 \end{enumerate}
 \end{frame}
+
+
 
 % -----------------------------------------------------------------------------
 % Slajd: Backbone
@@ -2764,12 +2799,655 @@ print(f"mAP@0.5: {metrics.box.map50:.3f}")
 \end{frame}
 
 % =============================================================================
-% TO BE CONTINUED...
+% CZĘŚĆ 7: PRZYDATNE NARZĘDZIA
+% =============================================================================
+\section{Przydatne narzędzia}
+
+% -----------------------------------------------------------------------------
+% Slajd: Agenda narzędzi
+% -----------------------------------------------------------------------------
+\begin{frame}{Część 7: Przydatne narzędzia i platformy}
+\begin{itemize}
+    \item Platformy do treningu w chmurze (Kaggle, Colab)
+    \item Narzędzia do streamingu wideo (NDI Tools)
+    \item Wizualizacja architektury sieci (Netron, TensorBoard)
+    \item Platformy MLOps (ClearML, Weights \& Biases, MLflow)
+    \item Frameworki deep learning (PyTorch, TensorFlow)
+\end{itemize}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% Slajd: Platformy chmurowe - Kaggle
+% -----------------------------------------------------------------------------
+\begin{frame}{Kaggle -- darmowe GPU w chmurze}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+% OBRAZEK: kaggle_notebooks.png
+% Szukaj: "Kaggle notebooks GPU interface"
+% Ścieżka: img/kaggle_notebooks.png
+\textbf{Zalety:}
+\begin{itemize}
+    \item Darmowe GPU (T4, P100) -- 30h/tydzień
+    \item TPU dostępne
+    \item Gotowe datasety (COCO, ImageNet)
+    \item Społeczność i konkursy
+    \item Wersjonowanie notebooków
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Ograniczenia:}
+\begin{itemize}
+    \item Sesja max 12h
+    \item 30h GPU/tydzień
+    \item Ograniczona pamięć dyskowa
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{Szybki start:}
+\begin{enumerate}
+    \item Załóż konto na kaggle.com
+    \item New Notebook $\rightarrow$ GPU
+    \item Zainstaluj Ultralytics:
+\end{enumerate}
+\begin{small}
+\texttt{!pip install ultralytics}
+\end{small}
+
+\vspace{0.3cm}
+\textbf{Upload własnych danych:}
+\begin{itemize}
+    \item Kaggle Datasets (do 100GB)
+    \item Bezpośredni upload do notebooka
+\end{itemize}
+
+\vspace{0.3cm}
+\url{https://www.kaggle.com/}
+\end{column}
+\end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% Slajd: Google Colab
+% -----------------------------------------------------------------------------
+\begin{frame}[fragile]{Google Colab -- Jupyter w chmurze Google}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\textbf{Wersje:}
+\begin{itemize}
+    \item \textbf{Free:} T4 GPU (16GB), limity czasowe
+    \item \textbf{Pro (\$10/mies.):} Więcej czasu, lepsze GPU
+    \item \textbf{Pro+ (\$50/mies.):} A100, tło działające
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Zalety:}
+\begin{itemize}
+    \item Integracja z Google Drive
+    \item Łatwe udostępnianie
+    \item Gotowe środowisko Python
+    \item Darmowy tier wystarczający do nauki
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{Integracja z Google Drive:}
+\begin{small}
+\begin{verbatim}
+from google.colab import drive
+drive.mount('/content/drive')
+
+# Twoje dane w:
+# /content/drive/MyDrive/dataset/
+\end{verbatim}
+\end{small}
+
+\vspace{0.3cm}
+\textbf{Sprawdź GPU:}
+\begin{small}
+\texttt{!nvidia-smi}
+\end{small}
+
+\vspace{0.3cm}
+\url{https://colab.research.google.com/}
+\end{column}
+\end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% Slajd: Porównanie Kaggle vs Colab
+% -----------------------------------------------------------------------------
+\begin{frame}{Kaggle vs Google Colab -- porównanie}
+\begin{center}
+\begin{tabular}{p{3.5cm}p{4.5cm}p{4.5cm}}
+\toprule
+\textbf{Cecha} & \textbf{Kaggle} & \textbf{Google Colab} \\
+\midrule
+GPU (free) & T4/P100, 30h/tydzień & T4, limit dzienny \\
+\midrule
+Sesja max & 12h & $\sim$12h (może się rozłączyć) \\
+\midrule
+Storage & Datasets (100GB) & Google Drive (15GB free) \\
+\midrule
+Społeczność & Konkursy, notebooks & Mniej interaktywna \\
+\midrule
+Integracja & Kaggle API & Google Drive, GCP \\
+\midrule
+Najlepsze do & Konkursy ML, eksploracja & Szybkie prototypy, nauka \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+\textbf{Rekomendacja:} Używaj obu! Kaggle do datasetów i konkurów, Colab do szybkich eksperymentów.
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% Slajd: NDI Tools
+% -----------------------------------------------------------------------------
+\begin{frame}{NDI Tools -- streaming wideo dla CV}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+% OBRAZEK: ndi_tools_screenshot.png
+% Szukaj: "NDI Tools Windows video streaming"
+% Ścieżka: img/ndi_tools_screenshot.png
+\textbf{Co to NDI?}
+\begin{itemize}
+    \item Network Device Interface
+    \item Protokół streamingu wideo po sieci
+    \item Niskie opóźnienia
+    \item Darmowe narzędzia od NewTek
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Zastosowania w CV:}
+\begin{itemize}
+    \item Streaming z kamer IP
+    \item Wiele źródeł wideo jednocześnie
+    \item Integracja z OBS, vMix
+    \item Virtual cameras
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{NDI Tools (Windows):}
+\begin{itemize}
+    \item \textbf{NDI Scan Converter} -- ekran jako źródło
+    \item \textbf{NDI Virtual Input} -- wirtualna kamera
+    \item \textbf{NDI Studio Monitor} -- podgląd streamów
+    \item \textbf{NDI Test Patterns} -- testowe źródła
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{W Pythonie:}
+\begin{small}
+\texttt{pip install ndi-python}
+\end{small}
+
+\vspace{0.3cm}
+\url{https://ndi.video/tools/}
+\end{column}
+\end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% Slajd: Netron - wizualizacja sieci
+% -----------------------------------------------------------------------------
+\begin{frame}[fragile]{Netron -- wizualizacja architektury sieci}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+% OBRAZEK: netron_yolo_screenshot.png
+% Szukaj: "Netron YOLO model visualization"
+% Ścieżka: img/netron_yolo_screenshot.png
+\textbf{Co to Netron?}
+\begin{itemize}
+    \item Przeglądarka modeli ML
+    \item Wizualizacja warstw i połączeń
+    \item Parametry każdej warstwy
+    \item Wsparcie dla wielu formatów
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Obsługiwane formaty:}
+\begin{itemize}
+    \item ONNX (.onnx)
+    \item PyTorch (.pt, .pth)
+    \item TensorFlow (.pb, .h5)
+    \item TensorRT (.engine)
+    \item CoreML (.mlmodel)
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{Instalacja:}
+\begin{small}
+\begin{verbatim}
+# Aplikacja desktopowa
+# lub wersja online:
+\end{verbatim}
+\end{small}
+\url{https://netron.app/}
+
+\vspace{0.3cm}
+\textbf{Eksport YOLO do ONNX:}
+\begin{small}
+\begin{verbatim}
+from ultralytics import YOLO
+
+model = YOLO('yolo11n.pt')
+model.export(format='onnx')
+# Otwórz yolo11n.onnx w Netron
+\end{verbatim}
+\end{small}
+
+\vspace{0.3cm}
+\textbf{Co zobaczysz:}
+\begin{itemize}
+    \item Backbone, Neck, Head
+    \item Liczba parametrów
+    \item Kształty tensorów
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% Slajd: TensorBoard
+% -----------------------------------------------------------------------------
+\begin{frame}[fragile]{TensorBoard -- wizualizacja treningu}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\textbf{Funkcje:}
+\begin{itemize}
+    \item Wykresy loss i metryk
+    \item Histogramy wag
+    \item Grafy obliczeniowe
+    \item Obrazy (predykcje, augmentacje)
+    \item Profiling wydajności
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Uruchomienie:}
+\begin{small}
+\begin{verbatim}
+# W terminalu
+tensorboard --logdir runs/detect
+
+# Otwórz przeglądarkę
+# http://localhost:6006
+\end{verbatim}
+\end{small}
+\end{column}
+\begin{column}{0.5\textwidth}
+% OBRAZEK: tensorboard_screenshot.png
+% Szukaj: "TensorBoard training curves loss"
+% Ścieżka: img/tensorboard_screenshot.png
+\textbf{W Google Colab:}
+\begin{small}
+\begin{verbatim}
+%load_ext tensorboard
+%tensorboard --logdir runs/detect
+\end{verbatim}
+\end{small}
+
+\vspace{0.3cm}
+\textbf{Ultralytics automatycznie:}
+\begin{itemize}
+    \item Loguje metryki do TensorBoard
+    \item Zapisuje w \texttt{runs/detect/train/}
+\end{itemize}
+
+\vspace{0.3cm}
+\url{https://www.tensorflow.org/tensorboard}
+\end{column}
+\end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% Slajd: ClearML
+% -----------------------------------------------------------------------------
+\begin{frame}[fragile]{ClearML -- platforma MLOps}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\textbf{Funkcje:}
+\begin{itemize}
+    \item Śledzenie eksperymentów
+    \item Wersjonowanie modeli i danych
+    \item Automatyczna dokumentacja
+    \item Orkiestracja pipeline'ów
+    \item Remote execution (agenty)
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Zalety:}
+\begin{itemize}
+    \item Open-source (self-hosted)
+    \item Darmowy tier w chmurze
+    \item Automatyczna integracja
+    \item Porównywanie eksperymentów
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{Instalacja:}
+\begin{small}
+\texttt{pip install clearml}
+\end{small}
+
+\vspace{0.3cm}
+\textbf{Inicjalizacja:}
+\begin{small}
+\texttt{clearml-init}
+\end{small}
+
+\vspace{0.3cm}
+\textbf{W kodzie:}
+\begin{small}
+\begin{verbatim}
+from clearml import Task
+task = Task.init(
+    project_name='YOLO',
+    task_name='experiment_1'
+)
+# Ultralytics auto-loguje!
+\end{verbatim}
+\end{small}
+
+\vspace{0.3cm}
+\url{https://clear.ml/}
+\end{column}
+\end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% Slajd: Weights & Biases
+% -----------------------------------------------------------------------------
+\begin{frame}[fragile]{Weights \& Biases (W\&B) -- tracking eksperymentów}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\textbf{Funkcje:}
+\begin{itemize}
+    \item Real-time tracking
+    \item Automatyczne wykresy
+    \item Porównywanie runs
+    \item Hyperparameter sweeps
+    \item Model registry
+    \item Raporty i dashboardy
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Integracja z Ultralytics:}
+\begin{itemize}
+    \item Automatyczna po \texttt{pip install wandb}
+    \item Loguje metryki, obrazy, modele
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{Instalacja:}
+\begin{small}
+\begin{verbatim}
+pip install wandb
+wandb login
+\end{verbatim}
+\end{small}
+
+\vspace{0.3cm}
+\textbf{Użycie:}
+\begin{small}
+\begin{verbatim}
+import wandb
+wandb.init(project="yolo-project")
+
+# Ultralytics automatycznie
+# loguje wszystko do W&B
+model.train(data='data.yaml')
+\end{verbatim}
+\end{small}
+
+\vspace{0.3cm}
+\url{https://wandb.ai/}
+\end{column}
+\end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% Slajd: MLflow
+% -----------------------------------------------------------------------------
+\begin{frame}[fragile]{MLflow -- open-source MLOps}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\textbf{Komponenty:}
+\begin{itemize}
+    \item \textbf{MLflow Tracking} -- logowanie eksperymentów
+    \item \textbf{MLflow Projects} -- pakowanie kodu
+    \item \textbf{MLflow Models} -- deployment
+    \item \textbf{Model Registry} -- wersjonowanie
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Zalety:}
+\begin{itemize}
+    \item Pełny open-source
+    \item Self-hosted lub Databricks
+    \item Agnostyczny (PyTorch, TF, sklearn)
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{Instalacja:}
+\begin{small}
+\texttt{pip install mlflow}
+\end{small}
+
+\vspace{0.3cm}
+\textbf{Podstawowe użycie:}
+\begin{small}
+\begin{verbatim}
+import mlflow
+
+mlflow.set_experiment("yolo")
+
+with mlflow.start_run():
+    mlflow.log_param("epochs", 100)
+    mlflow.log_metric("mAP", 0.85)
+    mlflow.log_artifact("model.pt")
+\end{verbatim}
+\end{small}
+
+\vspace{0.3cm}
+\textbf{UI:} \texttt{mlflow ui}
+
+\url{https://mlflow.org/}
+\end{column}
+\end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% Slajd: Porównanie platform MLOps
+% -----------------------------------------------------------------------------
+\begin{frame}{Porównanie platform MLOps}
+\begin{center}
+\begin{small}
+\begin{tabular}{p{2.5cm}p{3cm}p{3cm}p{3.5cm}}
+\toprule
+\textbf{Cecha} & \textbf{ClearML} & \textbf{W\&B} & \textbf{MLflow} \\
+\midrule
+Licencja & Open-source & Freemium & Open-source \\
+\midrule
+Self-hosted & Tak & Enterprise & Tak \\
+\midrule
+Free tier & Tak (hojny) & Tak (limity) & Tak (pełny) \\
+\midrule
+Auto-logging & Tak & Tak & Częściowe \\
+\midrule
+UI & Bardzo dobry & Excellent & Podstawowy \\
+\midrule
+Remote exec & Tak (agenty) & Launch (beta) & Nie \\
+\midrule
+Najlepsze do & Pełny MLOps & Tracking, raporty & Self-hosted \\
+\bottomrule
+\end{tabular}
+\end{small}
+\end{center}
+
+\vspace{0.3cm}
+\textbf{Rekomendacja dla początkujących:}
+\begin{itemize}
+    \item \textbf{W\&B} -- najlepszy UI, łatwy start
+    \item \textbf{ClearML} -- jeśli potrzebujesz self-hosted
+    \item \textbf{MLflow} -- jeśli już używasz Databricks
+\end{itemize}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% Slajd: PyTorch vs TensorFlow
+% -----------------------------------------------------------------------------
+\begin{frame}{PyTorch vs TensorFlow -- który wybrać?}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\textbf{PyTorch}
+\begin{itemize}
+    \item Używany przez Ultralytics YOLO
+    \item Dynamiczny graf obliczeniowy
+    \item ``Pythonic'' -- intuicyjny
+    \item Dominuje w research
+    \item TorchScript dla produkcji
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Kiedy PyTorch:}
+\begin{itemize}
+    \item YOLO, detekcja obiektów
+    \item Szybkie prototypowanie
+    \item Badania naukowe
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{TensorFlow}
+\begin{itemize}
+    \item Google ecosystem
+    \item TensorFlow Lite (mobile)
+    \item TensorFlow.js (web)
+    \item Keras -- wysoki poziom
+    \item TensorFlow Serving (produkcja)
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Kiedy TensorFlow:}
+\begin{itemize}
+    \item Deployment na edge/mobile
+    \item Integracja z GCP
+    \item Większe zespoły (standardy)
+\end{itemize}
+\end{column}
+\end{columns}
+
+\vspace{0.3cm}
+\begin{center}
+\textbf{Dla YOLO: PyTorch} (natywnie wspierany przez Ultralytics)
+\end{center}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% Slajd: Inne przydatne narzędzia
+% -----------------------------------------------------------------------------
+\begin{frame}[fragile]{Inne przydatne narzędzia}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\textbf{Annotacja i dane:}
+\begin{itemize}
+    \item \textbf{Roboflow} -- platforma datasetów
+    \item \textbf{FiftyOne} -- eksploracja datasetów
+    \item \textbf{DVC} -- wersjonowanie danych
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Optymalizacja modeli:}
+\begin{itemize}
+    \item \textbf{TensorRT} -- NVIDIA inference
+    \item \textbf{ONNX Runtime} -- cross-platform
+    \item \textbf{OpenVINO} -- Intel optimization
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Deployment:}
+\begin{itemize}
+    \item \textbf{Triton Server} -- NVIDIA inference server
+    \item \textbf{BentoML} -- ML serving
+    \item \textbf{Gradio} -- szybkie demo UI
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{IDE i debugowanie:}
+\begin{itemize}
+    \item \textbf{VS Code} + Python extension
+    \item \textbf{PyCharm} -- Professional dla ML
+    \item \textbf{Jupyter} -- interaktywna eksploracja
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Współpraca:}
+\begin{itemize}
+    \item \textbf{GitHub} -- kod i wersjonowanie
+    \item \textbf{Hugging Face} -- model hub
+    \item \textbf{Discord/Slack} -- społeczności ML
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Gradio -- szybkie demo:}
+\begin{small}
+\begin{verbatim}
+import gradio as gr
+gr.Interface(fn=predict,
+    inputs="image",
+    outputs="image").launch()
+\end{verbatim}
+\end{small}
+\end{column}
+\end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% Slajd: Podsumowanie narzędzi
+% -----------------------------------------------------------------------------
+\begin{frame}{Podsumowanie: Ekosystem narzędzi}
+\begin{center}
+\begin{tikzpicture}[scale=0.8, every node/.style={font=\small, align=center}]
+% Central node
+\node[draw, circle, fill=yoloBlue!30, minimum size=2cm] (yolo) at (0,0) {\textbf{YOLO}};
+
+% Surrounding categories
+\node[draw, rectangle, fill=green!20, minimum width=2.5cm] (cloud) at (-4,2) {Chmura\\Kaggle, Colab};
+\node[draw, rectangle, fill=blue!20, minimum width=2.5cm] (mlops) at (4,2) {MLOps\\W\&B, ClearML};
+\node[draw, rectangle, fill=orange!20, minimum width=2.5cm] (viz) at (-4,-2) {Wizualizacja\\Netron, TB};
+\node[draw, rectangle, fill=red!20, minimum width=2.5cm] (deploy) at (4,-2) {Deploy\\TensorRT, ONNX};
+\node[draw, rectangle, fill=purple!20, minimum width=2.5cm] (data) at (0,3) {Dane\\Roboflow, CVAT};
+\node[draw, rectangle, fill=yellow!20, minimum width=2.5cm] (stream) at (0,-3) {Streaming\\NDI Tools};
+
+% Arrows
+\draw[->, thick] (cloud) -- (yolo);
+\draw[->, thick] (mlops) -- (yolo);
+\draw[->, thick] (viz) -- (yolo);
+\draw[->, thick] (deploy) -- (yolo);
+\draw[->, thick] (data) -- (yolo);
+\draw[->, thick] (stream) -- (yolo);
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.3cm}
+\textbf{Minimum do startu:} Colab/Kaggle + Ultralytics + Roboflow
+\end{frame}
+
+% =============================================================================
+% ZAKOŃCZENIE
 % =============================================================================
 
 \begin{frame}
 \begin{center}
-\Huge\textbf{to be continued...}
+\Huge\textbf{Pytania?}
+
+\vspace{1cm}
+\Large Dziękuję za uwagę!
+
+\vspace{1cm}
+\normalsize
+\textbf{Przydatne linki:}\\
+\url{https://docs.ultralytics.com/}\\
+\url{https://github.com/ultralytics/ultralytics}
 \end{center}
 \end{frame}
 

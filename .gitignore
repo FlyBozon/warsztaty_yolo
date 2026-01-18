@@ -16,6 +16,8 @@ __pycache__/
 *.out
 *.pdf
 
+red_ball_augmented/
+
 # C extensions
 *.so
 

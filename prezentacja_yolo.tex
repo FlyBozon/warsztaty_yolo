@@ -159,7 +159,7 @@ Autonomiczne pojazdy, monitoring, retail, medycyna
 % Szukaj: "object detection bounding box example"
 % Opis: Zdjęcie z oznaczonymi prostokątami detekcji (samochody, ludzie)
 % Ścieżka: img/object_detection_example.png
-\fbox{\parbox{3.5cm}{\centering\small\textit{Obrazek: detekcja obiektów\\z bounding boxami}\\[0.3cm]\tiny img/object\_detection\_example.png}}
+\includegraphics[width=5.5cm]{img/object_detection_example.png}
 \end{center}
 \end{column}
 \end{columns}
@@ -276,7 +276,7 @@ Segm. instancji & piksele\_kot1, piksele\_kot2, piksele\_pies (każda instancja 
 % -----------------------------------------------------------------------------
 \begin{frame}{Historia detekcji: podejście dwuetapowe (Two-Stage)}
 \begin{center}
-\includegraphics[width=0.7\textwidth,height=0.3\textheight,keepaspectratio]{one_and_two_stage_detectors.png}
+\includegraphics[width=0.7\textwidth,height=0.45\textheight,keepaspectratio]{img/one-two-stage.png}
 \end{center}
 
 \vspace{0.2cm}
@@ -2071,15 +2071,17 @@ names:
 % Szukaj: "LabelImg screenshot annotation tool"
 % Opis: Screenshot interfejsu LabelImg z zaznaczonym bounding boxem
 % Ścieżka: img/labelimg_screenshot.png
-\fbox{\parbox{5cm}{\centering\small\textit{LabelImg -- prosty interfejs}\\[0.2cm]\tiny img/labelimg\_screenshot.png}}
+\includegraphics[width=5cm]{img/labelimg_screenshot.png}\\
+\small\textbf{LabelImg} -- prosty, lokalny
 
-\vspace{0.5cm}
+\vspace{0.3cm}
 
 % OBRAZEK: cvat_screenshot.png
 % Szukaj: "CVAT annotation tool interface"
 % Opis: Screenshot CVAT z projektem adnotacji
 % Ścieżka: img/cvat_screenshot.png
-\fbox{\parbox{5cm}{\centering\small\textit{CVAT -- zaawansowany webowy}\\[0.2cm]\tiny img/cvat\_screenshot.png}}
+\includegraphics[width=5cm]{img/cvat_screenshot.png}\\
+\small\textbf{CVAT} -- zaawansowany, webowy
 \end{center}
 \end{column}
 \begin{column}{0.5\textwidth}
@@ -2088,15 +2090,17 @@ names:
 % Szukaj: "Roboflow platform dataset annotation"
 % Opis: Screenshot platformy Roboflow z przeglądem datasetu
 % Ścieżka: img/roboflow_screenshot.png
-\fbox{\parbox{5cm}{\centering\small\textit{Roboflow -- platforma chmurowa}\\[0.2cm]\tiny img/roboflow\_screenshot.png}}
+\includegraphics[width=5cm]{img/roboflow_screenshot.png}\\
+\small\textbf{Roboflow} -- chmura, augmentacje
 
-\vspace{0.5cm}
+\vspace{0.3cm}
 
 % OBRAZEK: label_studio_screenshot.png
 % Szukaj: "Label Studio annotation interface"
 % Opis: Screenshot Label Studio z projektem ML
 % Ścieżka: img/label\_studio\_screenshot.png
-\fbox{\parbox{5cm}{\centering\small\textit{Label Studio -- multi-task}\\[0.2cm]\tiny img/label\_studio\_screenshot.png}}
+\includegraphics[width=5cm]{img/label_studio_screenshot.png}\\
+\small\textbf{Label Studio} -- multi-task, ML
 \end{center}
 \end{column}
 \end{columns}
@@ -2152,7 +2156,7 @@ names:
 % Opis: Siatka pokazująca ten sam obraz z różnymi augmentacjami
 % (flip, rotate, scale, brightness, blur)
 % Ścieżka: img/augmentation_examples.png
-\fbox{\parbox{12cm}{\centering\vspace{0.5cm}\textit{Przykłady augmentacji:\\oryginał, flip, rotacja, skala, jasność, blur}\\[0.5cm]\tiny img/augmentation\_examples.png\vspace{0.5cm}}}
+\includegraphics[width=6cm]{img/augmentation_examples.png}
 \end{center}
 
 \vspace{0.3cm}
@@ -2365,7 +2369,7 @@ model.train(
 % Opis: Schemat transfer learningu - duży dataset -> pretrained -> fine-tune -> mały dataset
 % Ścieżka: img/transfer_learning_diagram.png
 \begin{center}
-\fbox{\parbox{5cm}{\centering\vspace{0.3cm}\textit{Transfer Learning:\\COCO $\rightarrow$ Pretrained $\rightarrow$ Fine-tune}\\[0.3cm]\tiny img/transfer\_learning\_diagram.png\vspace{0.3cm}}}
+\includegraphics[width=8cm]{img/transfer_learning_diagram.png}
 \end{center}
 \end{column}
 \begin{column}{0.55\textwidth}
@@ -2479,6 +2483,31 @@ Tylko gdy domain bardzo różny od COCO
 \texttt{model.train(data='data.yaml', epochs=100, batch=16, imgsz=640, lr0=0.01)}
 \end{small}
 \end{center}
+\end{frame}
+
+\begin{frame}
+    \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/underfitting_overfitting_loss.png}
+\end{frame}
+
+\begin{frame}{Overfitting -- co robić?}
+\begin{columns}
+\begin{column}{0.55\textwidth}
+    \includegraphics[width=\textwidth]{img/overfitting.png}
+
+    \small Po 9 epoce wyniki testów przestają rosnąć -- overfitting.
+\end{column}
+\begin{column}{0.45\textwidth}
+\textbf{Rozwiązania:}
+\begin{itemize}
+    \item \textbf{Early stopping} -- \texttt{patience=50}
+    \item \textbf{Więcej danych} lub augmentacje
+    \item \textbf{Regularyzacja} -- weight decay
+    \item \textbf{Dropout} w warstwie head
+    \item \textbf{Mniejszy model} (s $\rightarrow$ n)
+    \item \textbf{Freeze backbone} -- \texttt{freeze=10}
+\end{itemize}
+\end{column}
+\end{columns}
 \end{frame}
 
 % -----------------------------------------------------------------------------
@@ -2605,7 +2634,7 @@ YOLO11l & 4-8 \\
 % Szukaj: "YOLO training results.png loss mAP curves"
 % Opis: Typowy wykres results.png z treningu YOLO (loss, mAP, precision, recall)
 % Ścieżka: img/yolo_training_results.png
-\fbox{\parbox{5.5cm}{\centering\vspace{0.5cm}\textit{Wykresy treningu:\\loss, mAP, precision, recall}\\[0.5cm]\tiny img/yolo\_training\_results.png\vspace{0.5cm}}}
+\includegraphics[width=5.5cm]{img/yolo_training_results.png}
 \end{center}
 \end{column}
 \begin{column}{0.5\textwidth}
@@ -2614,7 +2643,7 @@ YOLO11l & 4-8 \\
 % Szukaj: "YOLO confusion matrix object detection"
 % Opis: Przykładowa confusion matrix z treningu YOLO
 % Ścieżka: img/confusion_matrix_example.png
-\fbox{\parbox{5.5cm}{\centering\vspace{0.5cm}\textit{Confusion Matrix:\\które klasy są mylone}\\[0.5cm]\tiny img/confusion\_matrix\_example.png\vspace{0.5cm}}}
+\includegraphics[width=5.5cm]{img/confusion_matrix_example.png}
 \end{center}
 \end{column}
 \end{columns}

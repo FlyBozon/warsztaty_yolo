@@ -61,7 +61,7 @@ def main():
         verbose=True,
         seed=42,
         deterministic=True,
-        device="0",              # GPU 0 (zmień na "cpu" jeśli brak GPU)
+        device="cpu",              # GPU 0 (zmień na "cpu" jeśli brak GPU)
         workers=4,
         # Augmentacje wbudowane w YOLO (delikatne - mamy już własne)
         hsv_h=0.01,              # Minimalna zmiana hue (zachowujemy czerwień)
